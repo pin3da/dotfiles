@@ -10,7 +10,7 @@
   "license": "ISC",
   "repository" : {
     "type" : "git",
-    "url" : "https://github.com/pin3da"
+    "url" : "https://github.com/pin3da/dot_files.git"
   },
   "dependencies": {
     "xml2js": "~0.4.1"
