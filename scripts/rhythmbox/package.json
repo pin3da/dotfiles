@@ -1,0 +1,18 @@
+{
+  "name": "rhytmbox_duplicates",
+  "version": "0.0.0",
+  "description": "Script to delete duplicate songs in rhythmbox",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Manuel Pineda",
+  "license": "ISC",
+  "repository" : {
+    "type" : "git",
+    "url" : "https://github.com/pin3da"
+  },
+  "dependencies": {
+    "xml2js": "~0.4.1"
+  }
+}
