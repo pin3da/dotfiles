@@ -1,6 +1,6 @@
 Script to remove the duplicate songs in rhythmbox.
 
-I wrote this code to play around javascript and nodejs, i hope it would be useful for someone besides me.
+I wrote this code to play around javascript and nodejs modules, i hope it would be useful for someone besides me.
 
 
 # Preparation
