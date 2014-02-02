@@ -5,11 +5,13 @@ I wrote this code to play around javascript and nodejs, i hope it would be usefu
 
 # Preparation
 
-If you have installed nodejs just run.
+1. Download app.js and package.json files.
 
-    $ npm install
+2. If you have installed nodejs just run (in the same directory of app.js and package.json).
 
-else, install [nodejs](http://nodejs.org/) and back to the previous step.
+        $ npm install
+
+   else, install [nodejs](http://nodejs.org/) and back to the step 2.
 
 # Usage
 
