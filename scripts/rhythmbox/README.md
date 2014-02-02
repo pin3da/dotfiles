@@ -1,4 +1,4 @@
-Script to remove the duplicates in the rhythmbox music.
+Script to remove the duplicate songs in rhythmbox.
 
 I wrote this code to play around javascript and nodejs, i hope it would be useful for someone besides me.
 
