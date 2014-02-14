@@ -42,7 +42,8 @@ au BufRead,BufNewFile *.oz set filetype=oz
 autocmd BufWritePre * :%s/\s\+$//e
 
 let g:syntastic_cpp_gcc_args="-std=c++11"
+let g:syntastic_cpp_compiler_options = ' -std=c++11'
 
-" set expandtab
-" set tabstop=4
-" set shiftwidth=4
+set expandtab
+set tabstop=4
+set shiftwidth=4
