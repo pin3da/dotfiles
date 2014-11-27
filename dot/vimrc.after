@@ -38,6 +38,7 @@ autocmd BufEnter * silent! lcd %:p:h
 " Add oz syntax highlight
 au! Syntax oz source /home/pin3da/.janus/oz.vim/syntax/oz.vim
 au BufRead,BufNewFile *.oz set filetype=oz
+au BufRead,BufNewFile *.ejs set filetype=html
 
 autocmd BufWritePre * :%s/\s\+$//e
 
@@ -45,6 +46,6 @@ let g:syntastic_cpp_gcc_args="-std=c++11"
 let g:syntastic_cpp_compiler_options = ' -std=c++11'
 
 set expandtab
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set mouse=a
