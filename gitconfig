@@ -1,0 +1,15 @@
+[user]
+    name = Manuel Pineda
+    email = manuel.felipe.pineda@gmail.com
+
+[alias]
+    st = status
+    co = checkout
+    lg = log --date=relative --graph --decorate
+    ss = status -s
+
+[diff]
+    tool = vimdiff
+
+[difftool]
+    prompt = false

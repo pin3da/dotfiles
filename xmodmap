@@ -1,0 +1,7 @@
+keycode 112 = Home Home Prior
+keycode 117 = End End Next
+
+remove Lock = Caps_Lock
+add Lock = Escape
+keysym Caps_Lock = Escape
+keysym Escape = Caps_Lock
