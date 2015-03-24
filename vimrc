@@ -1,5 +1,8 @@
 " Based on https://github.com/amix/vimrc/blob/master/vimrcs/basic.vim
 
+set nocompatible
+filetype off
+
 set wildmenu
 set wildignore=*.o,*~,*.pyc
 
@@ -21,10 +24,12 @@ set expandtab
 set smarttab
 set tabstop=2
 set shiftwidth=2
+set number
 
 set dir=~/.cache/vim,/tmp
 
 set laststatus=2
+
 
 " Sorry my fish.. you don't play well with vundle..
 if &shell =~ "/fish"
@@ -32,13 +37,13 @@ if &shell =~ "/fish"
 endif
 
 " Enable side bars only if there is enough room
-if &columns > 79
-    set colorcolumn=+4
-    if &columns > 83
-        set number
-        if &columns > 84 | set foldcolumn=1 | endif
-    endif
-endif
+" if &columns > 79
+"    set colorcolumn=+4
+"    if &columns > 83
+"        set number
+"        if &columns > 84 | set foldcolumn=1 | endif
+"    endif
+" endif
 
 
 
@@ -68,16 +73,31 @@ autocmd BufReadPost *
 autocmd BufWritePre *.* :%s/\s\+$//e
 
 
-" Format the status line
-set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
+" set the runtime path to include Vundle and initialize
+"set rtp+=~/.vim/bundle/Vundle.vim
+set runtimepath+=$HOME/.vim/bundle/Vundle.vim/
+call vundle#rc()
+Plugin 'gmarik/Vundle.vim'
 
-syntax enable
+Plugin 'scrooloose/nerdtree'
 
-" Helper functions
-" Returns true if paste mode is enabled
-function! HasPaste()
-  if &paste
-    return 'PASTE MODE '
-  en
-  return ''
-endfunction
+" Color schemes
+Plugin 'flazz/vim-colorschemes'
+
+" Statusline
+Plugin 'bling/vim-airline'
+Plugin 'bling/vim-bufferline'
+
+" call vundle#end()            " required
+filetype plugin indent on    " required
+
+syntax on
+colorscheme wombat256mod
+" colorscheme bubblegum
+
+
+"""
+""" Plugin-specific customizations
+"""
+let s:p_settings="$HOME/.vim/plugin_settings/*.vim"
+execute join(map(split(glob(s:p_settings)), '"source " . v:val'), "\n")
