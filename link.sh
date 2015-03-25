@@ -8,5 +8,8 @@ ln -fs $REPO/xbindkeysrc ~/.xbindkeysrc
 ln -fs $REPO/xmodmap ~/.xmodmap
 ln -fs $REPO/Xresources ~/.Xresources
 ln -fs $REPO/xsession ~/.xessions
-ln -fs $REPO/config/ ~/.config
-ln -fs $REPO/i3status.conf /etc/i3status.conf
+cp -rf $REPO/config/* ~/.config
+
+if [ "`id -u`" = "0" ]; then
+  ln -fs $REPO/i3status.conf /etc/i3status.conf
+fi
