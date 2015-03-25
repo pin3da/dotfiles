@@ -1,6 +1,6 @@
 #! /bin/sh
 
-export REPO=/home/pin3da/repos/dotfiles
+export REPO=`pwd`
 
 ln -fs $REPO/vimrc ~/.vimrc
 ln -fs $REPO/gitconfig ~/.gitconfig
