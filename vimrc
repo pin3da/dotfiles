@@ -84,17 +84,29 @@ Plugin 'scrooloose/nerdtree'
 " Color schemes
 Plugin 'flazz/vim-colorschemes'
 
+" Check syntax
+Plugin 'scrooloose/syntastic'
+
 " Statusline
 Plugin 'bling/vim-airline'
 Plugin 'bling/vim-bufferline'
+
+" Comments
+Plugin 'scrooloose/nerdcommenter'
+
+" Complete words with tab
+Plugin 'ervandew/supertab'
+
 
 " call vundle#end()            " required
 filetype plugin indent on    " required
 
 syntax on
 colorscheme wombat256mod
-" colorscheme bubblegum
 
+" C++11 syntax
+let g:syntastic_cpp_gcc_args="-std=c++11"
+let g:syntastic_cpp_compiler_options = ' -std=c++11'
 
 """
 """ Plugin-specific customizations
