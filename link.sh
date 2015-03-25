@@ -7,7 +7,7 @@ ln -fs $REPO/gitconfig ~/.gitconfig
 ln -fs $REPO/xbindkeysrc ~/.xbindkeysrc
 ln -fs $REPO/xmodmap ~/.xmodmap
 ln -fs $REPO/Xresources ~/.Xresources
-ln -fs $REPO/xsession ~/.xessions
+ln -fs $REPO/xsession ~/.xsession
 cp -rf $REPO/config/* ~/.config
 
 if [ "`id -u`" = "0" ]; then
