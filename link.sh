@@ -1,13 +1,13 @@
 #! /bin/sh
 
-export REPO=/home/pin3da/repos/dotfiles
+export REPO=`pwd`
 
 ln -fs $REPO/vimrc ~/.vimrc
 ln -fs $REPO/gitconfig ~/.gitconfig
 ln -fs $REPO/xbindkeysrc ~/.xbindkeysrc
 ln -fs $REPO/xmodmap ~/.xmodmap
 ln -fs $REPO/Xresources ~/.Xresources
-ln -fs $REPO/xsession ~/.xessions
+ln -fs $REPO/xsession ~/.xsession
 cp -rf $REPO/config/* ~/.config
 
 rm -rf ~/.vim/plugin_settings
