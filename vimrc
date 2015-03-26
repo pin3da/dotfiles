@@ -97,6 +97,10 @@ Plugin 'scrooloose/nerdcommenter'
 " Complete words with tab
 Plugin 'ervandew/supertab'
 
+" Snippets
+Plugin 'honza/vim-snippets'
+Plugin 'SirVer/ultisnips'
+
 
 " call vundle#end()            " required
 filetype plugin indent on    " required
