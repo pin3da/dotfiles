@@ -87,6 +87,9 @@ Plugin 'flazz/vim-colorschemes'
 " Check syntax
 Plugin 'scrooloose/syntastic'
 
+" Nodejs syntax
+Plugin 'jelera/vim-javascript-syntax'
+
 " Statusline
 Plugin 'bling/vim-airline'
 Plugin 'bling/vim-bufferline'
@@ -108,9 +111,15 @@ filetype plugin indent on    " required
 syntax on
 colorscheme wombat256mod
 
-" C++11 syntax
-let g:syntastic_cpp_gcc_args="-std=c++11"
-let g:syntastic_cpp_compiler_options = ' -std=c++11'
+"  Move lines
+nnoremap <A-j> :m .+1<CR>==
+nnoremap <A-k> :m .-2<CR>==
+inoremap <A-j> <Esc>:m .+1<CR>==gi
+inoremap <A-k> <Esc>:m .-2<CR>==gi
+vnoremap <A-j> :m '>+1<CR>gv=gv
+vnoremap <A-k> :m '<-2<CR>gv=gv
+
+
 
 """
 """ Plugin-specific customizations
