@@ -104,6 +104,8 @@ Plugin 'ervandew/supertab'
 Plugin 'honza/vim-snippets'
 Plugin 'SirVer/ultisnips'
 
+" Multiple cursors
+Plugin 'terryma/vim-multiple-cursors'
 
 " call vundle#end()            " required
 filetype plugin indent on    " required
