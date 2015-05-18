@@ -79,7 +79,11 @@ set runtimepath+=$HOME/.vim/bundle/Vundle.vim/
 call vundle#rc()
 Plugin 'gmarik/Vundle.vim'
 
-Plugin 'scrooloose/nerdtree'
+" Unite - browsing stuff inside vim with an uniform interface
+Plugin 'Shougo/unite.vim'
+Plugin 'Shougo/vimfiler.vim'
+Plugin 'Shougo/vimproc.vim'
+Plugin 'tsukkee/unite-help'
 
 " Color schemes
 Plugin 'flazz/vim-colorschemes'
@@ -107,6 +111,10 @@ Plugin 'SirVer/ultisnips'
 " Multiple cursors
 Plugin 'terryma/vim-multiple-cursors'
 
+" Ember stuff
+Plugin 'dsawardekar/ember.vim'
+Plugin 'mustache/vim-mustache-handlebars'
+
 " call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -122,14 +130,34 @@ vnoremap <A-j> :m '>+1<CR>gv=gv
 vnoremap <A-k> :m '<-2<CR>gv=gv
 
 " No arrows ):
-
 noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
 
 " format the entire file
-nmap <leader>fef ggVG=
+nmap <leader>fef gg=G
+
+" F-keys
+"
+" F2: Close current buffer
+" F3: Toggle file explorer
+" F4: Toggle numbering/fold column
+" F5: Toggle column bar
+" F6: Toggle whitespace visibility
+noremap <F2> :confirm bdel<CR>
+noremap <F3> :VimFilerExplorer<CR>
+noremap <F4> :set number!<CR>:let &foldcolumn=&fdc==0?1:0<CR>
+noremap <F5> :let &colorcolumn=(&cc == '' ? '+4' : '')<CR>
+noremap <F6> :set list!<CR>
+" Turn off highliting until next search
+nnoremap <silent><CR> :noh<CR>
+" Moving around buffers
+noremap <Leader>l :bnext!<CR>
+noremap <Leader>h :bprevious!<CR>
+
+" Make <shift> + O faster.
+:set timeout timeoutlen=5000 ttimeoutlen=100
 
 
 """
