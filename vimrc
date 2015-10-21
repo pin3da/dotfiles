@@ -26,7 +26,10 @@ set tabstop=2
 set shiftwidth=2
 set number
 
-set dir=~/.cache/vim,/tmp
+" set dir=~/.cache/vim,/tmp
+set nowritebackup
+set noswapfile
+set nobackup
 
 set laststatus=2
 
@@ -38,11 +41,11 @@ endif
 
 " Enable side bars only if there is enough room
 " if &columns > 79
-"    set colorcolumn=+4
-"    if &columns > 83
-"        set number
-"        if &columns > 84 | set foldcolumn=1 | endif
-"    endif
+"   set colorcolumn=+4
+"   if &columns > 83
+"       set number
+"       if &columns > 84 | set foldcolumn=1 | endif
+"   endif
 " endif
 
 
@@ -158,6 +161,9 @@ noremap <Leader>h :bprevious!<CR>
 
 " Make <shift> + O faster.
 :set timeout timeoutlen=5000 ttimeoutlen=100
+
+" Toggling the list style
+let g:netrw_liststyle=3
 
 
 """

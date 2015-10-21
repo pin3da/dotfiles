@@ -1,0 +1,26 @@
+set autoindent
+set smartindent 
+set expandtab
+set tabstop=2
+set shiftwidth=2
+
+set textwidth=80
+set nohls
+set noshowmatch
+syntax enable
+setlocal spell spelllang=en_us
+set nospell
+set background=dark
+
+set modeline
+set nojoinspaces
+set shortmess=AIT
+
+set nowritebackup
+set noswapfile
+set nobackup
+
+set list
+set listchars=tab:→\ ,trail:×
+set mouse=a
+set number
