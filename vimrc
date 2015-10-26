@@ -104,13 +104,6 @@ Plugin 'bling/vim-bufferline'
 " Comments
 Plugin 'scrooloose/nerdcommenter'
 
-" Complete words with tab
-Plugin 'ervandew/supertab'
-
-" Snippets
-Plugin 'honza/vim-snippets'
-Plugin 'SirVer/ultisnips'
-
 " Multiple cursors
 Plugin 'terryma/vim-multiple-cursors'
 
