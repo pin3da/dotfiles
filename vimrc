@@ -132,7 +132,7 @@ noremap <Left> <NOP>
 noremap <Right> <NOP>
 
 " format the entire file
-nmap <leader>fef gg=G
+nmap <leader>fef mzgg=G`z
 
 " F-keys
 "

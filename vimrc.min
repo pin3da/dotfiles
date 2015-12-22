@@ -1,5 +1,5 @@
 set autoindent
-set smartindent 
+set smartindent
 set expandtab
 set tabstop=2
 set shiftwidth=2
@@ -24,3 +24,5 @@ set list
 set listchars=tab:→\ ,trail:×
 set mouse=a
 set number
+
+nmap <leader>fef mzgg=G`z
