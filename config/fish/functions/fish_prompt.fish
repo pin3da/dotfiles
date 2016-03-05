@@ -20,6 +20,7 @@ function fish_prompt -d "Sets a simple prompt"
   set -l normal (set_color normal)
   set -l arrow "λ"
   set -l user (id -u $USER)
+  set -l fish_color_cwd normal
 
 
   # Show a compressed path, highlighting only the last component
@@ -48,7 +49,7 @@ function fish_prompt -d "Sets a simple prompt"
   if test $last_status -eq 0
     # root user id
     if test $user -eq 0
-      set_color -o green
+      set_color -o blue
     else
       set_color -o white
     end
