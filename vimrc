@@ -107,15 +107,21 @@ Plugin 'scrooloose/nerdcommenter'
 " Multiple cursors
 Plugin 'terryma/vim-multiple-cursors'
 
-" Ember stuff
-Plugin 'dsawardekar/ember.vim'
+" Template stuff
 Plugin 'mustache/vim-mustache-handlebars'
+
+" Rust
+Plugin 'rust-lang/rust.vim'
+
+" ejs syntax
+Plugin 'nikvdp/ejs-syntax'
 
 " call vundle#end()            " required
 filetype plugin indent on    " required
 
 syntax on
 colorscheme wombat256mod
+"colorscheme github
 
 "  Move lines
 nnoremap <A-j> :m .+1<CR>==
