@@ -1,0 +1,27 @@
+{
+  "name": basename,
+  "description": prompt(),
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://github.com/pin3da/" + basename + ".git"
+  },
+  "main": prompt('entry point', 'index.js'),
+  "scripts": {
+    "test": "npm run test:lint && npm run test:unit",
+    "test:lint": "semistandard",
+    "test:unit": "tap test/*.js"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "pre-commit": "^1.1.2",
+    "semistandard": "^7.0.5",
+    "tap": "^5.7.1"
+  },
+  "author": "Manuel Pineda <manuel.felipe.pineda@gmail.com> (http://github.com/pin3da)",
+  "license": "MPL-2.0",
+  "bugs": {
+    "url": "https://github.com/pin3da/" + basename + "/issues"
+  },
+  "homepage": "https://github.com/pin3da/" + basename + "#readme"
+}
