@@ -1,6 +1,6 @@
 #! /bin/bash
 
-STEP="10"    # Anything you like.
+STEP="2"    # Anything you like.
 
 # Set volume
 INC="/usr/bin/xbacklight -inc"
