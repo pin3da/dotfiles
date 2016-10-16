@@ -116,6 +116,10 @@ Plugin 'rust-lang/rust.vim'
 " ejs syntax
 Plugin 'nikvdp/ejs-syntax'
 
+" csv files
+
+Plugin 'chrisbra/csv.vim'
+
 " call vundle#end()            " required
 filetype plugin indent on    " required
 
