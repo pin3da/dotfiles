@@ -9,8 +9,7 @@ function compi
   g++ -static -Wall -O3 -DLOCAL $argv[1].cc -o $argv[1]
 end
 
-function testcp
-  compi $argv[1]
+function cptest
   eval time -p ./$argv[1] < $argv[2].in > $argv[1].out
   if diff $argv[1].out $argv[2].ans
     set_color green
@@ -21,7 +20,14 @@ function testcp
     echo 'wrong answer'
     set_color normal
   end
-
 end
+
+function cpbatch
+  compi $argv[1]
+  for i in (seq $argv[3] $argv[4])
+    cptest $argv[1] $argv[2]$i
+  end
+end
+
 
 set -gx PATH  $PATH /home/pin3da/gopath/bin
