@@ -36,3 +36,4 @@ end
 
 
 set -gx PATH  $PATH /home/pin3da/gopath/bin
+set -gx GOPATH /home/pin3da/gopath/bin

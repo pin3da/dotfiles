@@ -25,6 +25,7 @@ set smarttab
 set tabstop=2
 set shiftwidth=2
 set number
+set nowrap
 
 " set dir=~/.cache/vim,/tmp
 set nowritebackup
@@ -33,6 +34,8 @@ set nobackup
 
 set laststatus=2
 
+set background=dark
+
 
 " Sorry my fish.. you don't play well with vundle..
 if &shell =~ "/fish"
@@ -40,23 +43,23 @@ if &shell =~ "/fish"
 endif
 
 " Enable side bars only if there is enough room
-" if &columns > 79
-"   set colorcolumn=+4
-"   if &columns > 83
-"       set number
-"       if &columns > 84 | set foldcolumn=1 | endif
-"   endif
-" endif
+if &columns > 79
+    set colorcolumn=+4
+    if &columns > 83
+        set number
+        if &columns > 84 | set foldcolumn=1 | endif
+    endif
+endif
 
 
 
 " Set extra options when running in GUI mode
-if has("gui_running")
-    set guioptions-=T
-    set guioptions+=e
-    set t_Co=256
-    set guitablabel=%M\ %t
-endif
+"if has("gui_running")
+set guioptions-=T
+set guioptions+=e
+set t_Co=256
+set guitablabel=%M\ %t
+" endif
 
 
 " Smart way to move between windows
@@ -78,7 +81,7 @@ autocmd BufWritePre *.* :%s/\s\+$//e
 
 " set the runtime path to include Vundle and initialize
 "set rtp+=~/.vim/bundle/Vundle.vim
-set runtimepath+=$HOME/.vim/bundle/Vundle.vim/
+set runtimepath+=$HOME/.vim/bundle/Vundle.vim
 call vundle#rc()
 Plugin 'gmarik/Vundle.vim'
 
@@ -94,8 +97,8 @@ Plugin 'flazz/vim-colorschemes'
 " Check syntax
 Plugin 'scrooloose/syntastic'
 
-" Nodejs syntax
-Plugin 'jelera/vim-javascript-syntax'
+" Vue syntax
+Plugin 'posva/vim-vue'
 
 " Statusline
 Plugin 'bling/vim-airline'
@@ -124,7 +127,8 @@ Plugin 'chrisbra/csv.vim'
 filetype plugin indent on    " required
 
 syntax on
-colorscheme wombat256mod
+colorscheme wombat256
+" colorscheme zazen
 "colorscheme github
 
 "  Move lines
