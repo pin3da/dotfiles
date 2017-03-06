@@ -1,4 +1,3 @@
-set -x TERM xterm-256color
 
 function mkcd
   mkdir $argv
@@ -35,5 +34,7 @@ function cpbatch
 end
 
 
+set -gx TERM xterm-256color
 set -gx PATH  $PATH /home/pin3da/gopath/bin
 set -gx GOPATH /home/pin3da/gopath/
+set -gx AIRFLOW_HOME /home/pin3da/airflow/

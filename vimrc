@@ -93,6 +93,7 @@ Plugin 'tsukkee/unite-help'
 
 " Color schemes
 Plugin 'flazz/vim-colorschemes'
+Plugin 'colepeters/spacemacs-theme.vim'
 
 " Check syntax
 Plugin 'scrooloose/syntastic'
@@ -127,9 +128,16 @@ Plugin 'chrisbra/csv.vim'
 filetype plugin indent on    " required
 
 syntax on
-colorscheme wombat256
+colorscheme wombat256mod
+" colorscheme zenburn
 " colorscheme zazen
-"colorscheme github
+" colorscheme github
+
+if &term =~ '256color'
+    " Disable Background Color Erase (BCE) so that color schemes
+    " work properly when Vim is used inside tmux and GNU screen.
+    set t_ut=
+endif
 
 "  Move lines
 nnoremap <A-j> :m .+1<CR>==
