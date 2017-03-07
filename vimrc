@@ -42,16 +42,7 @@ if &shell =~ "/fish"
     set shell=/bin/sh
 endif
 
-" Enable side bars only if there is enough room
-if &columns > 79
-    set colorcolumn=+4
-    if &columns > 83
-        set number
-        if &columns > 84 | set foldcolumn=1 | endif
-    endif
-endif
-
-
+set cc=80
 
 " Set extra options when running in GUI mode
 "if has("gui_running")
@@ -179,6 +170,8 @@ noremap <Leader>h :bprevious!<CR>
 
 " Toggling the list style
 let g:netrw_liststyle=3
+
+highlight ColorColumn ctermbg=8
 
 
 """
