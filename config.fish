@@ -36,5 +36,5 @@ end
 
 set -gx TERM xterm-256color
 set -gx PATH  $PATH /home/pin3da/gopath/bin
-set -gx GOPATH /home/pin3da/gopath/
-set -gx AIRFLOW_HOME /home/pin3da/airflow/
+set -gx GOPATH /home/pin3da/gopath
+set -gx AIRFLOW_HOME /home/pin3da/airflow
