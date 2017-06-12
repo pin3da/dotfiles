@@ -34,7 +34,7 @@ set nobackup
 
 set laststatus=2
 
-set background=dark
+" set background=dark
 
 
 " Sorry my fish.. you don't play well with vundle..
@@ -108,18 +108,24 @@ Plugin 'mustache/vim-mustache-handlebars'
 " Rust
 Plugin 'rust-lang/rust.vim'
 
+" Golang
+Plugin 'fatih/vim-go'
+
+" Python
+Plugin 'davidhalter/jedi-vim'
+
 " ejs syntax
 Plugin 'nikvdp/ejs-syntax'
 
 " csv files
-
 Plugin 'chrisbra/csv.vim'
 
 " call vundle#end()            " required
 filetype plugin indent on    " required
 
 syntax on
-colorscheme wombat256mod
+colorscheme space-vim-dark
+" colorscheme wombat256mod
 " colorscheme zenburn
 " colorscheme zazen
 " colorscheme github
