@@ -179,7 +179,7 @@ bindsym XF86AudioMute exec "amixer set Master toggle"
 # Player controls
 bindsym XF86AudioPrev exec mpc prev
 bindsym XF86AudioNext exec mpc next
-bindsym XF86AudioPlay exec mpc_toggle
+bindsym XF86AudioPlay exec mpc toggle
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
