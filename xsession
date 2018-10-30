@@ -6,6 +6,6 @@ xmodmap ~/.xmodmap &
 # Setting the volume and brightness keys
 # xbindkeys &
 
-# xit left
+xit left
 
 i3
