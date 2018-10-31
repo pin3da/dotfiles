@@ -9,7 +9,7 @@ Files and configurations for my computer:
 
 # Screenshot
 
-![Screenshot](./screenshot.png)
+![Screenshot](https://raw.githubusercontent.com/pin3da/dotfiles/master/screenshot.png)
 
 --------------
 
