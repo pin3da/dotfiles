@@ -15,6 +15,9 @@ height = 23
 background = #1c1c1c
 foreground = #eefafafa
 
+; system tray (notifications like telegram, hangouts, etc)
+tray-position = right
+
 overline-size = 3
 overline-color = ${colors.accent}
 underline-size = 3
