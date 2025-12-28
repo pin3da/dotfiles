@@ -35,12 +35,7 @@ set $term foot -f "Mono:size=12"
 # on the original workspace that the command was run on.
 # Recommends: rofi-wayland
 
-set $rofi_cmd rofi \
-        -terminal '$term'
-
-# Shows a combined list of the applications with desktop files and
-# executables from PATH.
-set $menu $rofi_cmd -show combi -combi-modes drun#run -modes combi
+set $menu wofi --show drun
 
 ### Output configuration
 #
