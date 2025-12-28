@@ -1,0 +1,10 @@
+# ~/.config/kanshi/config
+
+profile home-single-head {
+	output eDP-1 disable
+	output "Dell Inc. DELL P2720DC 81WTK01B0B1S" mode 2560x1440 position 0,0
+}
+
+profile laptop-only {
+	output eDP-1 enable
+}
