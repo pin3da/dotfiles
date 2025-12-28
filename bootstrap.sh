@@ -26,6 +26,7 @@ install_packages() {
     neovim \
     clang libclang-dev \
     wofi \
+    libinput-tools \
     pipewire || {
     echo "Package installation failed. Exiting."
     exit 1

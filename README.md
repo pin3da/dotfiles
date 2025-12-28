@@ -10,6 +10,10 @@ Files and configurations for my computer:
 - fish shell
 
 
+## Useful links
+
+- https://arewewaylandyet.com/
+
 ## Screenshots (past)
 
 ### 2018-10-31 
