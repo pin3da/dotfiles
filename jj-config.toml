@@ -1,0 +1,10 @@
+#:schema https://docs.jj-vcs.dev/latest/config-schema.json
+
+# Copy this into ~/.config/jj/config.toml
+
+[user]
+name = "Manuel Pineda"
+email = "manuel.felipe.pineda@gmail.com"
+
+[ui]
+editor = "vim"
