@@ -1,4 +1,6 @@
-# ~/.config/kanshi/config
+# Copy this to ~/.config/kanshi/config
+#
+# output name can be found with: swaymsg -t get_outputs
 
 profile home-single-head {
 	output eDP-1 disable

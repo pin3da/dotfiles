@@ -2,12 +2,22 @@
 
 Files and configurations for my computer:
 
-- i3wm
-- polybar
+## Current setup
+
+- sway (on wayland)
+- waybar
+- rofi
 - fish shell
 
 
-# Screenshot
+## Screenshots (past)
+
+### 2018-10-31 
+
+- i3wm
+- polybar
+- fishs hell
+
 
 ![Screenshot](https://raw.githubusercontent.com/pin3da/dotfiles/master/screenshot.png)
 
