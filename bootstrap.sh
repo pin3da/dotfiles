@@ -28,7 +28,7 @@ install_packages() {
   }
 
   sudo apt install -y \
-    sway swaylock waybar swaybg wofi \
+    sway swaylock waybar swaybg sway-notification-center wofi \
     dunst \
     brightnessctl \
     pulseaudio-utils \
