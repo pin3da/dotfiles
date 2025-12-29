@@ -36,6 +36,7 @@ install_packages() {
     kanshi \
     wl-clipboard \
     foot \
+    fish \
     build-essential \
     btop \
     curl \
@@ -50,19 +51,21 @@ install_packages() {
   }
 }
 
-restart_services() {
+fyi_post_install() {
   echo "Remember to restart the services if needed:"
 
   echo "  sudo systemctl --user restart wireplumber pipewire pipewire-pulse"
+
+  echo "Change shell if not done yet:"
+  echo "whereis fish"
+  echo "chsh"
 }
 
 main() {
   install_packages
   add_3p_repos
   install_3p_packages
-
-  # Restart necessary services
-  restart_services
+  fyi_post_install
 
   echo "Script completed successfully!"
 }
