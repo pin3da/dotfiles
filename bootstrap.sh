@@ -28,7 +28,7 @@ install_packages() {
   }
 
   sudo apt install -y \
-    sway \
+    sway swaylock waybar swaybg wofi \
     dunst \
     brightnessctl \
     pulseaudio-utils \
@@ -37,14 +37,13 @@ install_packages() {
     wl-clipboard \
     foot \
     build-essential \
-    waybar \
     btop \
     curl \
     gpg \
     neovim \
     clang libclang-dev \
-    wofi \
     libinput-tools \
+    alacritty \
     pipewire || {
     echo "Package installation failed. Exiting."
     exit 1
