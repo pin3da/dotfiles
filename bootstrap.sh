@@ -40,6 +40,7 @@ install_packages() {
     waybar \
     btop \
     curl \
+    gpg \
     neovim \
     clang libclang-dev \
     wofi \
