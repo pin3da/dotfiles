@@ -6,8 +6,8 @@ Files and configurations for my computer:
 
 - sway (on wayland)
 - waybar
-- rofi
 - fish shell
+- greetd + tuigreet
 
 
 ## Useful links

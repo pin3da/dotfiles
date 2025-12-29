@@ -234,11 +234,15 @@ exec swaync
 bindsym $mod+Shift+n exec swaync-client -t -sw
 
 # Lock
-# Turn off screen at 4 minutes, lock at 5 minutes. 
+# 4  min - turn off screen 
+# 5  min - lock 
+# 10 min - suspend
 exec swayidle -w \
-    timeout 300 'swaylock --color=000000' \
     timeout 240 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-    before-sleep '$locker'
+    timeout 300 'swaylock -f -c 000000' \
+    timeout 600 'systemctl suspend' \
+    before-sleep 'swaylock -f -c 000000'
+
 # manually lock with mod+m
 bindsym $mod+m exec --no-startup-id swaylock --color=000000
 
