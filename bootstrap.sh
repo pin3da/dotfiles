@@ -1,6 +1,24 @@
 #!/bin/bash
 
-# NOTE: Rofi seems broken in debian testing, should be added later
+add_3p_repos() {
+  echo "Adding third party repos ..."
+  echo 'deb [signed-by=/etc/apt/keyrings/spotify.gpg] https://repository.spotify.com stable non-free' | sudo tee /etc/apt/sources.list.d/spotify.list
+  curl -fsSL https://download.spotify.com/debian/pubkey_C85668DF69375001.gpg | gpg --dearmor | sudo tee /etc/apt/keyrings/spotify.gpg > /dev/null
+}
+
+install_3p_packages() {
+  echo "Installing third party packages..."
+  sudo apt update || {
+    echo "Failed to update package lists. Exiting."
+    exit 1
+  }
+
+  sudo apt install -y \
+    spotify-client || {
+      echo "Failed to install third party packages. Exiting."
+      exit 1
+  }
+}
 
 install_packages() {
   echo "Installing required packages..."
@@ -12,7 +30,6 @@ install_packages() {
   sudo apt install -y \
     sway \
     dunst \
-    spotify-client \
     brightnessctl \
     pulseaudio-utils \
     playerctl \
@@ -40,8 +57,9 @@ restart_services() {
 }
 
 main() {
-  # Install packages
   install_packages
+  add_3p_repos
+  install_3p_packages
 
   # Restart necessary services
   restart_services
