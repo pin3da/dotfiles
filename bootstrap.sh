@@ -50,6 +50,15 @@ copy_configs() {
   }
 }
 
+update_desktop_entries() {
+  cp ./applications/spotify.desktop ~/.local/share/applications/spotify.desktop &&
+    chmod +x ~/.local/share/applications/spotify.desktop &&
+    update-desktop-database ~/.local/share/applications || {
+    echo "Failed to update desktop entries. Exiting."
+    exit 1
+  }
+}
+
 install_packages() {
   echo "Installing required packages..."
   sudo apt update || {
@@ -74,6 +83,7 @@ install_packages() {
     chromium \
     tree \
     gpg \
+    desktop-file-utils \
     grim slurp swappy \
     neovim luarocks \
     lazygit \
@@ -101,6 +111,7 @@ main() {
   add_3p_repos
   install_3p_packages
   copy_configs
+  update_desktop_entries
   fyi_post_install
 
   echo "Script completed successfully!"
