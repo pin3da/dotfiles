@@ -209,6 +209,12 @@
     font-weight: bold;
     padding: 0 0.6em;
 }
+#custom-spotify {
+  background: @nord_bg_blue;
+  color: @light;
+  padding: 0 0.6em;
+  font-weight: bold;
+}
 #idle_inhibitor {
     background: @mode;
     /*font-size: 1.6em;*/

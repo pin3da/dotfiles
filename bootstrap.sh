@@ -44,7 +44,7 @@ copy_configs() {
     cp ./configs/kanshi ~/.config/kanshi/config &&
     cp ./configs/sway ~/.config/sway/config &&
     cp ./configs/config.fish ~/.config/fish/config.fish &&
-    cp -r ./configs/waybar ~/.config/waybar || {
+    cp -rf ./configs/waybar ~/.config/ || {
     echo "Failed to copy configs. Exiting."
     exit 1
   }
@@ -71,7 +71,7 @@ install_packages() {
     dunst \
     brightnessctl \
     pulseaudio-utils \
-    playerctl \
+    playerctl gir1.2-playerctl-2.0 python3-gi \
     kanshi \
     wl-clipboard \
     foot \
@@ -85,7 +85,7 @@ install_packages() {
     gpg \
     desktop-file-utils \
     grim slurp swappy \
-    neovim luarocks \
+    neovim luarocks jq \
     lazygit \
     clang libclang-dev \
     libinput-tools \
@@ -107,6 +107,15 @@ fyi_post_install() {
 }
 
 main() {
+
+  if [ "$1" = "--configs-only" ]; then
+    echo "Running in configs-only mode..."
+    copy_configs
+    update_desktop_entries
+    echo "Configs copied and desktop entries updated successfully!"
+    exit 0
+  fi
+
   install_packages
   add_3p_repos
   install_3p_packages
@@ -117,4 +126,4 @@ main() {
   echo "Script completed successfully!"
 }
 
-main
+main "$1"
