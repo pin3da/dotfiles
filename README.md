@@ -15,7 +15,7 @@ The script can be run with `--configs-only` to skip the packages installation.
 
 ## Screenshots (past)
 
-### 2015
+### 2025
 
 ![2025-12-31](screenshots/2025-12-31.png)
 
@@ -31,7 +31,7 @@ The script can be run with `--configs-only` to skip the packages installation.
 
 - i3wm
 - polybar
-- fishs hell
+- fish shell
 
 --------------
 
