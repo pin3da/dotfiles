@@ -2,9 +2,11 @@
 
 add_3p_repos() {
   echo "Adding third party repos ..."
+  # Spotify
   echo 'deb [signed-by=/etc/apt/keyrings/spotify.gpg] https://repository.spotify.com stable non-free' | sudo tee /etc/apt/sources.list.d/spotify.list
   curl -fsSL https://download.spotify.com/debian/pubkey_C85668DF69375001.gpg | gpg --dearmor | sudo tee /etc/apt/keyrings/spotify.gpg >/dev/null
 
+  # Brave
   sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
   sudo curl -fsSLo /etc/apt/sources.list.d/brave-browser-release.sources https://brave-browser-apt-release.s3.brave.com/brave-browser.sources
 }
@@ -35,12 +37,13 @@ install_3p_packages() {
 copy_configs() {
   echo "Copying configs"
 
-  mkdir -p ~/.config/{jj,sway,kanshi}
+  mkdir -p ~/.config/{jj,sway,kanshi,fish}
 
   sudo cp ./configs/greetd.toml /etc/greetd/config.toml &&
     cp ./configs/jj.toml ~/.config/jj/config.toml &&
     cp ./configs/kanshi ~/.config/kanshi/config &&
     cp ./configs/sway ~/.config/sway/config &&
+    cp ./configs/config.fish ~/.config/fish/config.fish &&
     cp -r ./configs/waybar ~/.config/waybar || {
     echo "Failed to copy configs. Exiting."
     exit 1
@@ -71,6 +74,7 @@ install_packages() {
     chromium \
     tree \
     gpg \
+    grim slurp swappy \
     neovim luarocks \
     lazygit \
     clang libclang-dev \
