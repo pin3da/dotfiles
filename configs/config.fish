@@ -10,3 +10,5 @@ function screenshot
     end
     grim -g "$(slurp)" - | swappy -f - $output_arg
 end
+
+mise activate fish | source
