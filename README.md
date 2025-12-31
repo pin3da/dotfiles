@@ -33,9 +33,6 @@ The script can be run with `--configs-only` to skip the packages installation.
 - polybar
 - fishs hell
 
-
-![Screenshot](https://raw.githubusercontent.com/pin3da/dotfiles/master/screenshot.png)
-
 --------------
 
 Manuel Pineda
