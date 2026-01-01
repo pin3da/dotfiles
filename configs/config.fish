@@ -11,4 +11,8 @@ function screenshot
     grim -g "$(slurp)" - | swappy -f - $output_arg
 end
 
+function jj-push
+    jj bookmark set main -r @-; and jj git push
+end
+
 mise activate fish | source

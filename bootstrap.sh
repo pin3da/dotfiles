@@ -26,8 +26,9 @@ install_3p_packages() {
   }
 
   rm -rf ~/.config/nvim.bak/ &&
-    mv -f ~/.config/nvim{,.bak} &&
-    git clone https://github.com/LazyVim/starter ~/.config/nvim &&
+    mv -f ~/.config/nvim{,.bak}
+
+  git clone https://github.com/LazyVim/starter ~/.config/nvim &&
     rm -rf ~/.config/nvim/.git || {
     echo "Failed to clone LazyVim. Exiting."
     exit 1
@@ -88,8 +89,12 @@ install_packages() {
     neovim luarocks jq \
     lazygit \
     clang libclang-dev \
+    bluez libdbus-1-dev pkg-config \
+    wavemon \
     libinput-tools \
+    fastfetch \
     greetd tuigreet \
+    libyaml-dev \
     alacritty \
     pipewire || {
     echo "Package installation failed. Exiting."
