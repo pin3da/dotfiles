@@ -48,8 +48,8 @@ install_env_packages() {
     exit 1
   }
 
-  cargo install --locked --bin jj jj-cli &&
-    cargo install \
+  cargo install --quiet --locked --bin jj jj-cli &&
+    cargo install --quiet \
       impala-nm \
       bluetui || {
     echo "Failed to install packages with cargo. Exiting."
@@ -80,6 +80,7 @@ install_apt_packages() {
     curl \
     chromium \
     tree \
+    intel-gpu-tools \
     gpg \
     desktop-file-utils \
     grim slurp swappy \

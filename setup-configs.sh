@@ -19,7 +19,7 @@ copy_configs() {
 update_desktop_entries() {
   cp ./applications/spotify.desktop ~/.local/share/applications/spotify.desktop &&
     chmod +x ~/.local/share/applications/spotify.desktop &&
-    update-desktop-database ~/.local/share/applications > /dev/null 2>&1 || {
+    update-desktop-database ~/.local/share/applications >/dev/null 2>&1 || {
     echo "Failed to update desktop entries. Exiting."
     exit 1
   }
