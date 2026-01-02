@@ -6,7 +6,7 @@ Files and configurations for my computer:
 
 On a fresh Debian installation, the bootstrap script will install all the dependencies and copy the configuration files.
 
-The script can be run with `--configs-only` to skip the packages installation.
+Each script called by `bootstap.sh` can also be called on its own.
 
 
 ## Notes
