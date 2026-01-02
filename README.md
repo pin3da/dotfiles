@@ -15,11 +15,6 @@ The script can be run with `--configs-only` to skip the packages installation.
 
 - https://arewewaylandyet.com/
 
-### TODOs 
-
-- [ ] Install rust with mise
-  - [ ] Install jj, impala-nm
-
 ## Screenshots (past)
 
 ### 2025
