@@ -1,11 +1,26 @@
 #!/bin/bash
 
-FONT_DIR="$HOME/.local/share/fonts"
-FONT_URL="https://github.com/ryanoasis/nerd-fonts/raw/refs/heads/master/patched-fonts/RobotoMono/Regular/RobotoMonoNerdFontMono-Regular.ttf"
+install_fonts() {
+  echo "Installing fonts..."
 
-mkdir -p "$FONT_DIR"
+  FONT_DIR="$HOME/.local/share/fonts"
+  FONT_URL="https://github.com/ryanoasis/nerd-fonts/raw/refs/heads/master/patched-fonts/RobotoMono/Regular/RobotoMonoNerdFontMono-Regular.ttf"
 
-curl -fL "$FONT_URL" \
-  -o "$FONT_DIR/RobotoMonoNerdFontMono-Regular.ttf"
+  mkdir -p "$FONT_DIR"
 
-fc-cache -fv
+  curl -fsSL "$FONT_URL" \
+    -o "$FONT_DIR/RobotoMonoNerdFontMono-Regular.ttf" || {
+    echo "Failed to download font. Exiting."
+    exit 1
+  }
+
+  fc-cache -f
+}
+
+main() {
+  install_fonts
+
+  echo "Fonts installed successfully!"
+}
+
+main

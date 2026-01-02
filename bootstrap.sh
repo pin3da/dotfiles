@@ -1,103 +1,22 @@
 #!/bin/bash
 
-add_3p_repos() {
-  echo "Adding third party repos ..."
-  # Spotify
-  echo 'deb [signed-by=/etc/apt/keyrings/spotify.gpg] https://repository.spotify.com stable non-free' | sudo tee /etc/apt/sources.list.d/spotify.list
-  curl -fsSL https://download.spotify.com/debian/pubkey_C85668DF69375001.gpg | gpg --dearmor | sudo tee /etc/apt/keyrings/spotify.gpg >/dev/null
-
-  # Brave
-  sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
-  sudo curl -fsSLo /etc/apt/sources.list.d/brave-browser-release.sources https://brave-browser-apt-release.s3.brave.com/brave-browser.sources
-}
-
-install_3p_packages() {
-  echo "Installing third party packages..."
-  sudo apt update || {
-    echo "Failed to update package lists. Exiting."
-    exit 1
-  }
-
-  sudo apt install -y \
-    brave-browser \
-    spotify-client || {
-    echo "Failed to install third party packages. Exiting."
-    exit 1
-  }
-
-  rm -rf ~/.config/nvim.bak/ &&
-    mv -f ~/.config/nvim{,.bak}
-
-  git clone https://github.com/LazyVim/starter ~/.config/nvim &&
-    rm -rf ~/.config/nvim/.git || {
-    echo "Failed to clone LazyVim. Exiting."
-    exit 1
-  }
-}
-
-copy_configs() {
-  echo "Copying configs"
-
-  mkdir -p ~/.config/{jj,sway,kanshi,fish}
-
-  sudo cp ./configs/greetd.toml /etc/greetd/config.toml &&
-    cp ./configs/jj.toml ~/.config/jj/config.toml &&
-    cp ./configs/kanshi ~/.config/kanshi/config &&
-    cp ./configs/sway ~/.config/sway/config &&
-    cp ./configs/config.fish ~/.config/fish/config.fish &&
-    cp -rf ./configs/waybar ~/.config/ || {
-    echo "Failed to copy configs. Exiting."
-    exit 1
-  }
-}
-
-update_desktop_entries() {
-  cp ./applications/spotify.desktop ~/.local/share/applications/spotify.desktop &&
-    chmod +x ~/.local/share/applications/spotify.desktop &&
-    update-desktop-database ~/.local/share/applications || {
-    echo "Failed to update desktop entries. Exiting."
-    exit 1
-  }
-}
-
 install_packages() {
-  echo "Installing required packages..."
-  sudo apt update || {
-    echo "Failed to update package lists. Exiting."
+  ./install-packages.sh || {
+    echo "Failed to install packages. Exiting."
     exit 1
   }
+}
 
-  sudo apt install -y \
-    sway swaylock waybar swaybg sway-notification-center swayidle wofi \
-    dunst \
-    brightnessctl \
-    pulseaudio-utils \
-    playerctl gir1.2-playerctl-2.0 python3-gi \
-    kanshi \
-    wl-clipboard \
-    foot \
-    fish \
-    build-essential \
-    git \
-    btop \
-    curl \
-    chromium \
-    tree \
-    gpg \
-    desktop-file-utils \
-    grim slurp swappy \
-    neovim luarocks jq \
-    lazygit \
-    clang libclang-dev \
-    bluez libdbus-1-dev pkg-config \
-    wavemon \
-    libinput-tools \
-    fastfetch \
-    greetd tuigreet \
-    libyaml-dev \
-    alacritty \
-    pipewire || {
-    echo "Package installation failed. Exiting."
+install_fonts() {
+  ./install-fonts.sh || {
+    echo "Failed to install fonts. Exiting."
+    exit 1
+  }
+}
+
+setup_configs() {
+  ./setup-configs.sh || {
+    echo "Failed to setup configs. Exiting."
     exit 1
   }
 }
@@ -112,23 +31,12 @@ fyi_post_install() {
 }
 
 main() {
-
-  if [ "$1" = "--configs-only" ]; then
-    echo "Running in configs-only mode..."
-    copy_configs
-    update_desktop_entries
-    echo "Configs copied and desktop entries updated successfully!"
-    exit 0
-  fi
-
   install_packages
-  add_3p_repos
-  install_3p_packages
-  copy_configs
-  update_desktop_entries
+  install_fonts
+  setup_configs
   fyi_post_install
 
   echo "Script completed successfully!"
 }
 
-main "$1"
+main

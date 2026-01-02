@@ -11,18 +11,14 @@ The script can be run with `--configs-only` to skip the packages installation.
 
 ## Notes
 
-### WiFi
-
-This is the default (basic) configuration in Debian.
-
-- `ifupdown` for network interface management.
-- `wpa_supplicant` for WiFi authentication.
-- `/etc/network/interfaces` for configuration.
-- `dhcpcd` for dns.
-
 ### Useful links
 
 - https://arewewaylandyet.com/
+
+### TODOs 
+
+- [ ] Install rust with mise
+  - [ ] Install jj, impala-nm
 
 ## Screenshots (past)
 
