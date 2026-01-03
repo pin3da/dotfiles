@@ -51,6 +51,7 @@ install_env_packages() {
   cargo install --quiet --locked --bin jj jj-cli &&
     cargo install --quiet \
       impala-nm \
+      wiremix \
       bluetui || {
     echo "Failed to install packages with cargo. Exiting."
     exti 1
@@ -94,7 +95,7 @@ install_apt_packages() {
     greetd tuigreet \
     libyaml-dev \
     alacritty \
-    pipewire || {
+    pipewire libpipewire-0.3-dev || {
     echo "Package installation failed. Exiting."
     exit 1
   }
