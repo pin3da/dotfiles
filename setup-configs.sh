@@ -25,9 +25,18 @@ update_desktop_entries() {
   }
 }
 
+update_backgrounds() {
+  sudo mkdir -p /usr/share/backgrounds/ &&
+    sudo cp ./backgrounds/berlin.png /usr/share/backgrounds/ || {
+    echo "Failed to update backgrounds. Exiting."
+    exit 1
+  }
+}
+
 main() {
   copy_configs
   update_desktop_entries
+  update_backgrounds
 
   echo "Configs setup completed successfully!"
 }
