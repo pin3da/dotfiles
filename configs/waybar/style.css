@@ -66,9 +66,8 @@
 #waybar {
     background: @bg;
     color: @light;
-    font-family: Roboto, Helvetica, Arial, sans-serif, "Font Awesome 5 Free";
-    font-size: 12px;
-    font-weight: bold;
+    font-family: 'RobotoMono Nerd Font', monospace;
+    font-size: 14px;
 }
 
 /* -----------------------------------------------------------------------------
@@ -148,7 +147,6 @@
  * -------------------------------------------------------------------------- */
 
 #workspaces button {
-    font-weight: bold;
     padding: 0;
     color: @light;
     opacity: 0.7;
@@ -191,33 +189,28 @@
 #bluetooth {
     background: @accent-blue;
     font-size: 1.2em;
-    font-weight: bold;
     padding: 0 0.6em;
 }
 
 #custom-gpu {
     background: @dark;
-    font-weight: bold;
     padding: 0 0.6em;
 }
 
 #custom-weather {
     background: @mode;
-    font-weight: bold;
     padding: 0 0.6em;
 }
 
 #custom-pacman {
     background: @light;
     color: @dark;
-    font-weight: bold;
     padding: 0 0.6em;
 }
 
 #custom-scratchpad-indicator {
     background: @light;
     color: @dark;
-    font-weight: bold;
     padding: 0 0.6em;
 }
 
@@ -225,12 +218,10 @@
     background: @accent-blue;
     color: @light;
     padding: 0 0.6em;
-    font-weight: bold;
 }
 
 #idle_inhibitor {
     background: @mode;
-    font-weight: bold;
     padding: 0 0.6em;
 }
 
