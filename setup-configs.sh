@@ -3,13 +3,14 @@
 copy_configs() {
   echo "Copying configs"
 
-  mkdir -p ~/.config/{jj,sway,kanshi,fish}
+  mkdir -p ~/.config/{jj,sway,kanshi,fish,nvim/lua/plugins}
 
   sudo cp ./configs/greetd.toml /etc/greetd/config.toml &&
     cp ./configs/jj.toml ~/.config/jj/config.toml &&
     cp ./configs/kanshi ~/.config/kanshi/config &&
     cp ./configs/sway ~/.config/sway/config &&
     cp ./configs/config.fish ~/.config/fish/config.fish &&
+    cp ./configs/nvim/lua/plugins/disable-completion.lua ~/.config/nvim/lua/plugins/ &&
     cp -rf ./configs/waybar ~/.config/ || {
     echo "Failed to copy configs. Exiting."
     exit 1
