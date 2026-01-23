@@ -13,6 +13,18 @@ add_3p_repos() {
   # Mise
   curl -fSs https://mise.jdx.dev/gpg-key.pub | sudo tee /etc/apt/keyrings/mise-archive-keyring.pub 1>/dev/null
   echo "deb [signed-by=/etc/apt/keyrings/mise-archive-keyring.pub arch=amd64] https://mise.jdx.dev/deb stable main" | sudo tee /etc/apt/sources.list.d/mise.list >/dev/null
+
+  # Docker (testing/forky not available, using trixie stable)
+  sudo install -m 0755 -d /etc/apt/keyrings
+  sudo curl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc
+  sudo chmod a+r /etc/apt/keyrings/docker.asc
+  sudo tee /etc/apt/sources.list.d/docker.sources <<EOF >/dev/null
+Types: deb
+URIs: https://download.docker.com/linux/debian
+Suites: trixie
+Components: stable
+Signed-By: /etc/apt/keyrings/docker.asc
+EOF
 }
 
 install_3p_packages() {
@@ -23,12 +35,16 @@ install_3p_packages() {
   }
 
   sudo apt install -y -qq \
+    docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin \
     brave-browser \
     mise \
     spotify-client || {
     echo "Failed to install third party packages. Exiting."
     exit 1
   }
+
+  # Add current user to docker group to run docker without sudo
+  sudo usermod -aG docker "$USER"
 
   rm -rf ~/.config/nvim.bak/ &&
     mv -f ~/.config/nvim{,.bak}
