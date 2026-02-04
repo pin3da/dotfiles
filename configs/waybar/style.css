@@ -302,7 +302,7 @@
 }
 
 #pulseaudio.source-muted {
-    background: #D08770;
+    background: @accent-blue;
     color: @light;
 }
 
