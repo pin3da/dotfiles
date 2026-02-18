@@ -68,6 +68,7 @@ install_env_packages() {
     cargo install --quiet \
       impala-nm \
       wiremix \
+      zoxide \
       bluetui || {
     echo "Failed to install packages with cargo. Exiting."
     exti 1
