@@ -102,7 +102,7 @@ install_apt_packages() {
     gpg \
     desktop-file-utils \
     grim slurp swappy \
-    neovim luarocks jq \
+    neovim luarocks jq ripgrep \
     lazygit \
     clang libclang-dev \
     bluez libdbus-1-dev pkg-config \
