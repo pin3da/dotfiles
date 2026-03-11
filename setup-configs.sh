@@ -3,9 +3,10 @@
 copy_configs() {
   echo "Copying configs"
 
-  mkdir -p ~/.config/{jj,sway,kanshi,fish,nvim/lua/plugins}
+  mkdir -p ~/.config/{alacritty,jj,sway,kanshi,fish,nvim/lua/plugins}
 
   sudo cp ./configs/greetd.toml /etc/greetd/config.toml &&
+    cp ./configs/alacritty/alacritty.toml ~/.config/alacritty/alacritty.toml &&
     cp ./configs/jj.toml ~/.config/jj/config.toml &&
     cp ./configs/kanshi ~/.config/kanshi/config &&
     cp ./configs/sway ~/.config/sway/config &&
