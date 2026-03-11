@@ -24,7 +24,7 @@ set $term alacritty
 # on the original workspace that the command was run on.
 # Recommends: rofi-wayland
 # backup: set $menu wmenu-run
-set $menu wofi --show drun
+set $menu wofi
 
 ### Output configuration
 #

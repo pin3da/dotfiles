@@ -3,7 +3,7 @@
 copy_configs() {
   echo "Copying configs"
 
-  mkdir -p ~/.config/{alacritty,jj,sway,kanshi,fish,nvim/lua/plugins}
+  mkdir -p ~/.config/{alacritty,jj,sway,kanshi,fish,nvim/lua/plugins,wofi}
 
   sudo cp ./configs/greetd.toml /etc/greetd/config.toml &&
     cp ./configs/alacritty/alacritty.toml ~/.config/alacritty/alacritty.toml &&
@@ -13,6 +13,7 @@ copy_configs() {
     cp ./configs/config.fish ~/.config/fish/config.fish &&
     cp ./configs/nvim/lua/plugins/disable-completion.lua ~/.config/nvim/lua/plugins/ &&
     cp ./configs/nvim/lua/plugins/formatting.lua ~/.config/nvim/lua/plugins/ &&
+    cp -rf ./configs/wofi ~/.config/ &&
     cp -rf ./configs/waybar ~/.config/ || {
     echo "Failed to copy configs. Exiting."
     exit 1

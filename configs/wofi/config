@@ -1,0 +1,9 @@
+show=drun
+width=500
+height=400
+always_parsed=true
+allow_images=true
+image_size=24
+prompt=
+insensitive=true
+matching=fuzzy
