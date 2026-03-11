@@ -96,6 +96,7 @@ install_apt_packages() {
     git \
     btop \
     curl \
+    clang-format \
     chromium \
     tree \
     intel-gpu-tools \

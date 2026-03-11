@@ -11,6 +11,7 @@ copy_configs() {
     cp ./configs/sway ~/.config/sway/config &&
     cp ./configs/config.fish ~/.config/fish/config.fish &&
     cp ./configs/nvim/lua/plugins/disable-completion.lua ~/.config/nvim/lua/plugins/ &&
+    cp ./configs/nvim/lua/plugins/formatting.lua ~/.config/nvim/lua/plugins/ &&
     cp -rf ./configs/waybar ~/.config/ || {
     echo "Failed to copy configs. Exiting."
     exit 1
