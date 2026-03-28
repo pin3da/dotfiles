@@ -113,6 +113,7 @@ install_apt_packages() {
     greetd tuigreet \
     libyaml-dev \
     alacritty \
+    wlsunset \
     psmisc \
     pipewire libpipewire-0.3-dev libspa-0.2-bluetooth || {
     echo "Package installation failed. Exiting."
