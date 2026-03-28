@@ -2,9 +2,20 @@
 
 add_3p_repos() {
   echo "Adding third party repos ..."
+
+  # Remove legacy .list files that conflict with modernized .sources equivalents
+  sudo rm -f /etc/apt/sources.list.d/spotify.list
+  sudo rm -f /etc/apt/sources.list.d/mise.list
+
   # Spotify
-  echo 'deb [signed-by=/etc/apt/keyrings/spotify.gpg] https://repository.spotify.com stable non-free' | sudo tee /etc/apt/sources.list.d/spotify.list >/dev/null
-  curl -fsSL https://download.spotify.com/debian/pubkey_C85668DF69375001.gpg | gpg --dearmor | sudo tee /etc/apt/keyrings/spotify.gpg >/dev/null
+  curl -fsSL https://download.spotify.com/debian/pubkey_5384CE82BA52C83A.gpg | gpg --dearmor | sudo tee /etc/apt/keyrings/spotify.gpg >/dev/null
+  sudo tee /etc/apt/sources.list.d/spotify.sources <<EOF >/dev/null
+Types: deb
+URIs: https://repository.spotify.com
+Suites: stable
+Components: non-free
+Signed-By: /etc/apt/keyrings/spotify.gpg
+EOF
 
   # Brave
   sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
@@ -12,7 +23,14 @@ add_3p_repos() {
 
   # Mise
   curl -fSs https://mise.jdx.dev/gpg-key.pub | sudo tee /etc/apt/keyrings/mise-archive-keyring.pub 1>/dev/null
-  echo "deb [signed-by=/etc/apt/keyrings/mise-archive-keyring.pub arch=amd64] https://mise.jdx.dev/deb stable main" | sudo tee /etc/apt/sources.list.d/mise.list >/dev/null
+  sudo tee /etc/apt/sources.list.d/mise.sources <<EOF >/dev/null
+Types: deb
+URIs: https://mise.jdx.dev/deb
+Suites: stable
+Components: main
+Architectures: amd64
+Signed-By: /etc/apt/keyrings/mise-archive-keyring.pub
+EOF
 
   # Docker (testing/forky not available, using trixie stable)
   sudo install -m 0755 -d /etc/apt/keyrings
