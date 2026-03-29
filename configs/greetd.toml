@@ -1,7 +1,7 @@
 # Copyt this into /etc/greetd/config.toml
 
 [terminal]
-vt = 1
+vt = 7
 
 [default_session]
 command = "/usr/bin/tuigreet --time --remember --cmd /usr/bin/sway"
