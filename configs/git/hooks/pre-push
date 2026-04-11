@@ -1,0 +1,27 @@
+#!/bin/bash
+# pre-push hook: reject pushes where the pushed commit tree contains a
+# "DO NOT SUBMIT" marker.
+#
+# Git passes one line per ref being pushed on stdin:
+#   <local-ref> <local-sha> <remote-ref> <remote-sha>
+#
+# A zero sha (0000...) means branch creation (no remote base) or deletion.
+
+MARKER="DO NOT SUBMIT"
+NULL_SHA="0000000000000000000000000000000000000000"
+
+while read -r local_ref local_sha remote_ref remote_sha; do
+  # Skip branch deletions.
+  if [ "$local_sha" = "$NULL_SHA" ]; then
+    continue
+  fi
+
+  # Check the tree at the tip of the pushed branch.
+  if git grep -qF "$MARKER" "$local_sha"; then
+    echo "ERROR: push rejected — '$MARKER' marker found at $local_sha." >&2
+    echo "Remove all '$MARKER' markers before pushing." >&2
+    exit 1
+  fi
+done
+
+exit 0
