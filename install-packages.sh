@@ -77,8 +77,13 @@ install_3p_packages() {
 install_env_packages() {
   echo "Installing env packages..."
 
-  mise use -g node rust || {
+  mise use -g node rust go || {
     echo "Failed to install environments with msise. Exiting."
+    exit 1
+  }
+
+  go install golang.org/x/tools/cmd/goimports@latest || {
+    echo "Failed to install goimports. Exiting."
     exit 1
   }
 
