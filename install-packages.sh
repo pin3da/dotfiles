@@ -82,7 +82,7 @@ install_env_packages() {
     exit 1
   }
 
-  go install golang.org/x/tools/cmd/goimports@latest || {
+  mise exec -- go install golang.org/x/tools/cmd/goimports@latest || {
     echo "Failed to install goimports. Exiting."
     exit 1
   }
