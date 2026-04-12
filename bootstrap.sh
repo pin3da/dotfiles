@@ -30,8 +30,16 @@ fyi_post_install() {
   echo "  Find path for fish 'whereis fish', then use 'chsh' to update it."
 }
 
+autoremove_packages() {
+  sudo apt autoremove -y || {
+    echo "Failed to autoremove packages. Exiting."
+    exit 1
+  }
+}
+
 main() {
   install_packages
+  autoremove_packages
   install_fonts
   setup_configs
   fyi_post_install
