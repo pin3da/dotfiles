@@ -62,11 +62,7 @@ copy_configs() {
   deploy ./configs/kanshi ~/.config/kanshi/config
   deploy ./configs/sway ~/.config/sway/config
   deploy ./configs/config.fish ~/.config/fish/config.fish
-  deploy ./configs/nvim/lua/plugins/autosave.lua ~/.config/nvim/lua/plugins/autosave.lua
-  deploy ./configs/nvim/lua/plugins/disable-completion.lua ~/.config/nvim/lua/plugins/disable-completion.lua
-  deploy ./configs/nvim/lua/plugins/formatting.lua ~/.config/nvim/lua/plugins/formatting.lua
-  deploy ./configs/nvim/lua/plugins/do-not-submit.lua ~/.config/nvim/lua/plugins/do-not-submit.lua
-  deploy ./configs/nvim/lua/plugins/lsp-go.lua ~/.config/nvim/lua/plugins/lsp-go.lua
+  deploy_dir ./configs/nvim/lua/plugins ~/.config/nvim/lua
   deploy ./configs/git/hooks/pre-push ~/.config/git/hooks/pre-push
   chmod +x ~/.config/git/hooks/pre-push
   deploy_dir ./configs/wofi ~/.config
