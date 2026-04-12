@@ -11,6 +11,7 @@ copy_configs() {
     cp ./configs/kanshi ~/.config/kanshi/config &&
     cp ./configs/sway ~/.config/sway/config &&
     cp ./configs/config.fish ~/.config/fish/config.fish &&
+    cp ./configs/nvim/lua/plugins/autosave.lua ~/.config/nvim/lua/plugins/ &&
     cp ./configs/nvim/lua/plugins/disable-completion.lua ~/.config/nvim/lua/plugins/ &&
     cp ./configs/nvim/lua/plugins/formatting.lua ~/.config/nvim/lua/plugins/ &&
     cp ./configs/nvim/lua/plugins/do-not-submit.lua ~/.config/nvim/lua/plugins/ &&
