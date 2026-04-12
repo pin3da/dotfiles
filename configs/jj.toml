@@ -8,3 +8,4 @@ email = "manuel.felipe.pineda@gmail.com"
 
 [ui]
 editor = "nvim"
+default-command = "log"

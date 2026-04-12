@@ -87,6 +87,11 @@ install_env_packages() {
     exit 1
   }
 
+  mise exec -- go install golang.org/x/tools/gopls@latest || {
+    echo "Failed to install gopls. Exiting."
+    exit 1
+  }
+
   cargo install --quiet --locked --bin jj jj-cli &&
     cargo install --quiet \
       impala-nm \

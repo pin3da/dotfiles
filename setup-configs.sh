@@ -66,6 +66,7 @@ copy_configs() {
   deploy ./configs/nvim/lua/plugins/disable-completion.lua ~/.config/nvim/lua/plugins/disable-completion.lua
   deploy ./configs/nvim/lua/plugins/formatting.lua ~/.config/nvim/lua/plugins/formatting.lua
   deploy ./configs/nvim/lua/plugins/do-not-submit.lua ~/.config/nvim/lua/plugins/do-not-submit.lua
+  deploy ./configs/nvim/lua/plugins/lsp-go.lua ~/.config/nvim/lua/plugins/lsp-go.lua
   deploy ./configs/git/hooks/pre-push ~/.config/git/hooks/pre-push
   chmod +x ~/.config/git/hooks/pre-push
   deploy_dir ./configs/wofi ~/.config
