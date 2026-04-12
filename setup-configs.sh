@@ -3,7 +3,7 @@
 copy_configs() {
   echo "Copying configs"
 
-  mkdir -p ~/.config/{alacritty,jj,sway,kanshi,fish,nvim/lua/plugins,git/hooks,wofi}
+  mkdir -p ~/.config/{alacritty,jj,sway,kanshi,fish,nvim/lua/plugins,git/hooks,wofi,tmux}
 
   sudo cp ./configs/greetd.toml /etc/greetd/config.toml &&
     cp ./configs/alacritty/alacritty.toml ~/.config/alacritty/alacritty.toml &&
@@ -18,7 +18,8 @@ copy_configs() {
     cp ./configs/git/hooks/pre-push ~/.config/git/hooks/pre-push &&
     chmod +x ~/.config/git/hooks/pre-push &&
     cp -rf ./configs/wofi ~/.config/ &&
-    cp -rf ./configs/waybar ~/.config/ || {
+    cp -rf ./configs/waybar ~/.config/ &&
+    cp ./configs/tmux.conf ~/.config/tmux/tmux.conf || {
     echo "Failed to copy configs. Exiting."
     exit 1
   }

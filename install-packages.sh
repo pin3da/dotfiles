@@ -138,7 +138,8 @@ install_apt_packages() {
     alacritty \
     wlsunset \
     psmisc \
-    pipewire libpipewire-0.3-dev libspa-0.2-bluetooth || {
+    pipewire libpipewire-0.3-dev libspa-0.2-bluetooth \
+    tmux || {
     echo "Package installation failed. Exiting."
     exit 1
   }
