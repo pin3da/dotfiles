@@ -6,6 +6,7 @@ return {
 				cpp = { "clang_format" },
 				c = { "clang_format" },
 				go = { "goimports" },
+				markdown = { "prettier" },
 			},
 		},
 	},
