@@ -93,3 +93,25 @@ white = "#AEB3BB"
 key = "Return"
 mods = "Shift"
 chars = "\u001B\r"
+
+# Override Alacritty's built-in Shift+Arrow scroll bindings so the keys reach
+# Neovim as proper ANSI shifted-arrow sequences (CSI 1 ; 2 A/B/C/D).
+[[keyboard.bindings]]
+key = "Up"
+mods = "Shift"
+chars = "\u001b[1;2A"
+
+[[keyboard.bindings]]
+key = "Down"
+mods = "Shift"
+chars = "\u001b[1;2B"
+
+[[keyboard.bindings]]
+key = "Left"
+mods = "Shift"
+chars = "\u001b[1;2D"
+
+[[keyboard.bindings]]
+key = "Right"
+mods = "Shift"
+chars = "\u001b[1;2C"
