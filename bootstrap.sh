@@ -24,7 +24,7 @@ setup_configs() {
 fyi_post_install() {
   echo "Remember to restart the services if needed:"
 
-  echo "  sudo systemctl --user restart wireplumber pipewire pipewire-pulse"
+  echo "  systemctl --user restart wireplumber pipewire pipewire-pulse xdg-desktop-portal xdg-desktop-portal-wlr"
 
   echo "Change shell if not done yet:"
   echo "  Find path for fish 'whereis fish', then use 'chsh' to update it."

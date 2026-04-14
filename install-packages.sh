@@ -122,6 +122,7 @@ install_apt_packages() {
     pulseaudio-utils \
     playerctl gir1.2-playerctl-2.0 python3-gi \
     kanshi \
+    wayland-utils \
     wl-clipboard \
     foot \
     fish \
@@ -148,7 +149,9 @@ install_apt_packages() {
     alacritty \
     wlsunset \
     psmisc \
-    pipewire libpipewire-0.3-dev libspa-0.2-bluetooth \
+    pipewire pipewire-pulse wireplumber \
+    xdg-desktop-portal xdg-desktop-portal-wlr \
+    libpipewire-0.3-dev libspa-0.2-bluetooth \
     tmux || {
     echo "Package installation failed. Exiting."
     exit 1
