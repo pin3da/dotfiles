@@ -31,7 +31,8 @@ fyi_post_install() {
 }
 
 autoremove_packages() {
-  sudo apt autoremove -y || {
+  echo "Autoremoving unused packages..."
+  sudo apt-get autoremove -yqq >/dev/null || {
     echo "Failed to autoremove packages. Exiting."
     exit 1
   }

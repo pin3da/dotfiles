@@ -47,16 +47,16 @@ EOF
 
 install_3p_packages() {
   echo "Installing third party packages..."
-  sudo apt update -qq || {
+  sudo apt-get update -qq >/dev/null || {
     echo "Failed to update package lists. Exiting."
     exit 1
   }
 
-  sudo apt install -y -qq \
+  sudo apt-get install -yqq \
     docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin \
     brave-browser \
     mise \
-    spotify-client || {
+    spotify-client >/dev/null || {
     echo "Failed to install third party packages. Exiting."
     exit 1
   }
@@ -77,32 +77,32 @@ install_3p_packages() {
 install_env_packages() {
   echo "Installing env packages..."
 
-  mise use -g node rust go || {
+  mise use -g node rust go >/dev/null || {
     echo "Failed to install environments with msise. Exiting."
     exit 1
   }
 
-  mise exec -- go install golang.org/x/tools/cmd/goimports@latest || {
+  mise exec -- go install golang.org/x/tools/cmd/goimports@latest >/dev/null || {
     echo "Failed to install goimports. Exiting."
     exit 1
   }
 
-  mise exec -- go install golang.org/x/tools/gopls@latest || {
+  mise exec -- go install golang.org/x/tools/gopls@latest >/dev/null || {
     echo "Failed to install gopls. Exiting."
     exit 1
   }
 
-  mise exec -- npm install -g prettier || {
+  mise exec -- npm install -g prettier >/dev/null || {
     echo "Failed to install prettier. Exiting."
     exit 1
   }
 
-  cargo install --quiet --locked --bin jj jj-cli &&
+  cargo install --quiet --locked --bin jj jj-cli >/dev/null &&
     cargo install --quiet \
       impala-nm \
       wiremix \
       zoxide \
-      bluetui || {
+      bluetui >/dev/null || {
     echo "Failed to install packages with cargo. Exiting."
     exti 1
   }
@@ -110,12 +110,12 @@ install_env_packages() {
 
 install_apt_packages() {
   echo "Installing required packages..."
-  sudo apt update -qq || {
+  sudo apt-get update -qq >/dev/null || {
     echo "Failed to update package lists. Exiting."
     exit 1
   }
 
-  sudo apt install -y -qq \
+  sudo apt-get install -yqq \
     sway swaylock waybar swaybg sway-notification-center swayidle wofi \
     dunst \
     brightnessctl \
@@ -152,7 +152,7 @@ install_apt_packages() {
     pipewire pipewire-pulse wireplumber \
     xdg-desktop-portal xdg-desktop-portal-wlr \
     libpipewire-0.3-dev libspa-0.2-bluetooth \
-    tmux || {
+    tmux >/dev/null || {
     echo "Package installation failed. Exiting."
     exit 1
   }
