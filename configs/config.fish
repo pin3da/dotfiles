@@ -18,3 +18,6 @@ end
 mise activate fish | source
 zoxide init fish | source
 export PATH="$HOME/.local/bin:$PATH"
+
+# opencode
+fish_add_path /home/pin3da/.opencode/bin
